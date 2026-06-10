@@ -3,9 +3,9 @@
 <channel>
 <title><![CDATA[smp64]]></title>
 <description><![CDATA[smp64]]></description>
-<link>https://smp64.github.io/</link>
-<atom:link href="https://smp64.github.io/rss.xml" rel="self" type="application/rss+xml" />
-<lastBuildDate>Wed, 10 Jun 2026 08:08:42 +0545</lastBuildDate>
+<link>https://sameepkat.github.io/</link>
+<atom:link href="https://sameepkat.github.io/rss.xml" rel="self" type="application/rss+xml" />
+<lastBuildDate>Wed, 10 Jun 2026 08:19:17 +0545</lastBuildDate>
 <item>
   <title><![CDATA[My First Post]]></title>
   <description><![CDATA[
@@ -29,8 +29,8 @@ Some closing lines
   <category><![CDATA[first]]></category>
   <category><![CDATA[emacs]]></category>
   <category><![CDATA[blog]]></category>
-  <link>https://smp64.github.io/2026-06-10-my-first-post.html</link>
-  <guid>https://smp64.github.io/2026-06-10-my-first-post.html</guid>
+  <link>https://sameepkat.github.io/2026-06-10-my-first-post.html</link>
+  <guid>https://sameepkat.github.io/2026-06-10-my-first-post.html</guid>
   <pubDate>Wed, 10 Jun 2026 08:04:00 +0545</pubDate>
 </item>
 </channel>
