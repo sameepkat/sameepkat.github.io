@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sameep</title>
+    <link>https://sameepkathayat.com.np/</link>
+    <description>Recent content on Sameep</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 21 Jun 2026 22:19:01 +0545</lastBuildDate>
+    <atom:link href="https://sameepkathayat.com.np/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>https://sameepkathayat.com.np/first-post/</link>
+      <pubDate>Sun, 21 Jun 2026 22:19:01 +0545</pubDate>
+      <guid>https://sameepkathayat.com.np/first-post/</guid>
+      <description>&lt;p&gt;&#xA;Trying out stuff. More to come&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lum</title>
+      <link>https://sameepkathayat.com.np/projects/lum/</link>
+      <pubDate>Tue, 16 Jun 2026 08:01:14 +0545</pubDate>
+      <guid>https://sameepkathayat.com.np/projects/lum/</guid>
+      <description>&lt;p&gt;&#xA;The Lum Programming Language &lt;/p&gt;&#xA;&lt;img src=&#34;https://sameepkathayat.com.np/images/lum.png&#34; width=200 /&gt;&#xA;&lt;!--The github repo is available at: https://github.com/sameepkat/lum You can star the project if you like it or contribute by opening issues or pull requests.&gt;&#xA;&lt;p&gt;&#xA;Lum is a dynamically typed programming language made in C++.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;It doesn&amp;#39;t try to be different than other programming languages just for the sake of being unique. It is designed to be easy to learn and use.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://sameepkathayat.com.np/about/</link>
+      <pubDate>Tue, 16 Jun 2026 07:58:58 +0545</pubDate>
+      <guid>https://sameepkathayat.com.np/about/</guid>
+      <description>&lt;p&gt;&#xA;Hello, I&amp;#39;m Sameep Kathayat.&#xA;A Software Engineering Undergrad student&lt;/p&gt;&#xA;&lt;p&gt;&#xA;I&amp;#39;m into low-level stuff. Also LLMs and inference..&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+body {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: #f4eaea;
+  font: 14px Arial, sans-serif;
+  line-height: 1.4;
+}
+
+nav a {
+  display: inline-block;
+  border: 1px solid #888;
+  background: #ddd;
+  padding: 3px 7px;
+}
+
+.window {
+  border: 1px solid #999;
+  background: #eee;
+  margin: 1rem 0;
+}
+
+.titlebar {
+  background: #3366bb;
+  color: white;
+  padding: 3px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 1rem;
+  background: #f8f8f8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

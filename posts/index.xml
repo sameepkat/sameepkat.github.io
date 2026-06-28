@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sameep</title>
+    <link>https://sameepkathayat.com.np/posts/</link>
+    <description>Recent content in Posts on Sameep</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 21 Jun 2026 22:19:01 +0545</lastBuildDate>
+    <atom:link href="https://sameepkathayat.com.np/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>https://sameepkathayat.com.np/first-post/</link>
+      <pubDate>Sun, 21 Jun 2026 22:19:01 +0545</pubDate>
+      <guid>https://sameepkathayat.com.np/first-post/</guid>
+      <description>&lt;p&gt;&#xA;Trying out stuff. More to come&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

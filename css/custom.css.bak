@@ -1,0 +1,17 @@
+:root {
+  --page-bg: #f8f4ea;
+  --text-color: #1f2933;
+  --muted-text: #8a8178;
+}
+
+html,
+body {
+  /* background-color: var(--page-bg);  */
+  background-color: cyan;
+  color: var(--text-color);
+}
+
+footer,
+footer p {
+  color: var(--muted-text);
+}
