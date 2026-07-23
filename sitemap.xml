@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sameepkathayat.com.np/first-post/</loc>
-    <lastmod>2026-06-21T22:19:01+05:45</lastmod>
-  </url><url>
     <loc>https://sameepkathayat.com.np/</loc>
+    <lastmod>2026-07-23T08:11:18+05:45</lastmod>
+  </url><url>
+    <loc>https://sameepkathayat.com.np/tokenization/</loc>
+    <lastmod>2026-07-23T08:11:18+05:45</lastmod>
+  </url><url>
+    <loc>https://sameepkathayat.com.np/projects/tootinygpt/</loc>
+    <lastmod>2026-07-21T07:40:02+05:45</lastmod>
+  </url><url>
+    <loc>https://sameepkathayat.com.np/a-quick-overview-on-memory-allocators/</loc>
+    <lastmod>2026-07-21T07:28:26+05:45</lastmod>
+  </url><url>
+    <loc>https://sameepkathayat.com.np/first-post/</loc>
     <lastmod>2026-06-21T22:19:01+05:45</lastmod>
   </url><url>
     <loc>https://sameepkathayat.com.np/posts/</loc>

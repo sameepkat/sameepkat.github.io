@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Portfolio of Sameep">
+  
+  <title>Tokenization | Sameep</title>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">Home</a>
+    
+    <a href="/about/">about</a>
+    
+    <a href="/posts">posts</a>
+    
+    <a href="/projects/">projects</a>
+    
+  </nav>
+
+</header>
+
+
+    <div class="window">
+      <div class="titlebar">
+	Tokenization
+      </div>
+      <main class="content">
+	
+<article>
+  <h1>Tokenization</h1>
+  
+    <p><small>2026-07-23</small></p>
+  
+
+
+  
+<p>
+We know, computers work with numbers and numbers only. So, whenever we represent some other formats like Emojis or Strings, it is naturally represented using numbers inside the computer system.</p>
+<p>
+The same goes for LLMs. They can&#39;t just work on raw text. They are first converted to numbers before they can be processed. The tool that does this exactly is known as a tokenizer. It is quite similar in concept but different than tokenizer used by compilers.</p>
+<p>
+Tokenizer in the context of LLMs take a raw input string, convert it into vectors (set of numbers) and train using those vectors. Later, during text generation, the output in given vector is converted to text string that we humans can understand.</p>
+<p>
+That said, there are different ways we can convert text to tokens. Each has their own pros and cons and with that their own use cases:</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Types of Tokenizers
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+1. Character level tokenizer
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>This is the simplest and most naive form of tokenization. Here, we simply take each character in any string and convert it into a number.</p>
+<p>
+   Notice, that with this approach, we won&#39;t have any issues with any unknown words as well words are represented by characters. This approach might be suitable for small amount of training data. However, this approach quickly poses a problem. Imagine we are trying to tokenize all the contents in a book. Tokenizing each and every character will grow out of hand quickly. Now, imagine we are trying to tokenize PetaBytes(PB) of worth of data from the internet. It requires a lot of compute and context window and makes long range dependencies difficult. We are essentially trading off smaller vocabulary for much longer sequences.</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+2. Word level Tokenizers
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>We can try to be clever here and we can tokens per word instead of characters. This is exactly what word level tokenizers do. This is quite straightforward because the string: <code class="verbatim">&#34;Hello World&#34;</code> becomes <code class="verbatim">[&#34;Hello&#34;, &#34;World&#34;]</code></p>
+<p>
+   This solves the problem of large sequences because a sentence will be composed of relatively shorter number of tokens in word level as opposed to character level. However, since we use a vocabulary for tokenization, we may run into words that are not in the vocabulary. For example, the vocabulary might have the word for <code class="verbatim">micro</code> and <code class="verbatim">processor</code> but not for <code class="verbatim">microprocessor</code>. Also, similar words that imply similar meaning will each have different tokens (<code class="verbatim">play</code>, <code class="verbatim">playing</code>, <code class="verbatim">played</code>). </p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+3. Subword level
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p>This approach tries to fix the problems with word level tokenizers. As the name suggests, it uses subwords instead of raw words directly. By subwords, what I mean is, it breaks down commonly occuring patterns and phrases in a word (i.e. <code class="verbatim">playing</code> becomes <code class="verbatim">play</code> and <code class="verbatim">ing</code>).</p>
+<p>
+   This approaches avoids most unknown words problem because an unknown might be broken down into smaller known words (i.e. <code class="verbatim">microprocessor</code> becomes <code class="verbatim">micro</code> and <code class="verbatim">processor</code>). It does this while keeping relatively short sequences (much much shorter than character level tokenizer). It also captures useful word structure. For examples:</p>
+<ul>
+<li><code class="verbatim">play</code> → <code class="verbatim">[&#34;play&#34;]</code></li>
+<li><code class="verbatim">playing</code> → <code class="verbatim">[&#34;play&#34; + &#34;ing&#34;]</code></li>
+<li><code class="verbatim">played</code> → <code class="verbatim">[&#34;play&#34; + &#34;ed&#34;]</code></li>
+</ul>
+<p>Not all languages follow this pattern, so it can become language dependent. However, it is still the most popular approach for tokenization till date.</p>
+</div>
+</div>
+</div>
+</div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer>
+  <hr/>
+  <small>
+    Copyright © 2026 Sameep Kathayat
+  </small>
+</footer>
+
+  </body>
+</html>
