@@ -87,8 +87,228 @@ Types of Tokenizers
 <li><code class="verbatim">played</code> → <code class="verbatim">[&#34;play&#34; + &#34;ed&#34;]</code></li>
 </ul>
 <p>Not all languages follow this pattern, so it can become language dependent. However, it is still the most popular approach for tokenization till date.</p>
+<div id="outline-container-headline-5" class="outline-4">
+<h4 id="headline-5">
+Subword level algorithms
+</h4>
+<div id="outline-text-headline-5" class="outline-text-4">
+<div id="outline-container-headline-6" class="outline-5">
+<h5 id="headline-6">
+1. BPE
+</h5>
+<div id="outline-text-headline-6" class="outline-text-5">
+<p>BPE is one of the subword level tokenization scheme in which most frequently adjacent pairs are combined together. It is very common, mostly in Decoder only transformers like GPT. Here, the algorithm starts with individual characters. As the model sees more and more vocabularily, it identifies different subwords that comes together regularly. It is purely frequency driven greedy approach.</p>
+<p>
+For example:
+If the training data frequently contains words like:</p>
+<p>
+<code class="verbatim">play, player, playing, replay</code></p>
+<p>
+The tokenizer may learn following tokens:</p>
+<ul>
+<li><code class="verbatim">play</code></li>
+<li><code class="verbatim">ing</code></li>
+<li><code class="verbatim">er</code></li>
+<li><code class="verbatim">re</code></li>
+</ul>
+<p>Later, if it encounters a new unseen word like <code class="verbatim">replaying</code>, following happens:</p>
+<p>
+<code class="verbatim">replaying</code> = <code class="verbatim">re</code> + <code class="verbatim">play</code> + <code class="verbatim">ing</code></p>
 </div>
 </div>
+<div id="outline-container-headline-7" class="outline-5">
+<h5 id="headline-7">
+2. WordPiece
+</h5>
+<div id="outline-text-headline-7" class="outline-text-5">
+<p>It is very similar to BPE, but has one major difference: At each step, WordPiece tries to pick a pair which will maximize the likelihood of words appearing in the training data when merged. This is unlike BPE which is a greedy approach and always tends to pick wjkjjords that appears most frequently together in the training data. It is very common in BERT models.</p>
+<p>
+For example, the algorithm will check if the probability of <code class="verbatim">&#34;es&#34;</code> coming together higher than probability of <code class="verbatim">&#34;e&#34;</code> or <code class="verbatim">&#34;s&#34;</code> in a word.</p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-5">
+<h5 id="headline-8">
+3. Unigram
+</h5>
+<div id="outline-text-headline-8" class="outline-text-5">
+<p>Unigram on the otherhand, starts with a bunch of subwords. Then, it iteratively and gradually remove the least useful ones keeping only important subwords. It starts with a very large pool of subwords, assign a probability to each token and remove tokens that contribute the least. During tokenization, it selects the most probable combination of remaining pieces.</p>
+<p>
+For example: Suppose the word is: <code class="verbatim">unhappiness</code></p>
+<p>
+During training, it may assign probabilities as:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Subword</strong></td>
+<td class="align-right"><strong>Probability</strong></td>
+</tr>
+<tr>
+<td>un</td>
+<td class="align-right">0.20</td>
+</tr>
+<tr>
+<td>happy</td>
+<td class="align-right">0.30</td>
+</tr>
+<tr>
+<td>happi</td>
+<td class="align-right">0.10</td>
+</tr>
+<tr>
+<td>ness</td>
+<td class="align-right">0.25</td>
+</tr>
+<tr>
+<td>s</td>
+<td class="align-right">0.05</td>
+</tr>
+<tr>
+<td>unhappy</td>
+<td class="align-right">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>
+Possible segments include:</p>
+<ul>
+<li><code class="verbatim">un + happi + ness</code></li>
+<li><code class="verbatim">unhappy + ness</code></li>
+<li><code class="verbatim">un + happy + ness</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-5">
+<h5 id="headline-9">
+4. SentencePiece
+</h5>
+<div id="outline-text-headline-9" class="outline-text-5">
+<p>Unlike other algorithms, it is more accurately a framework rather than an algorithm. It processes raw text directly (including spaces as well). This makes it adaptable and suitable for different domains. It may be implemented by either <code class="verbatim">BPE</code> or <code class="verbatim">Unigram</code> internally.</p>
+<p>
+For example: Suppose we take the sentence: &#34;I like playing football&#34;.</p>
+<p>
+Internally, <code class="verbatim">SentencePiece</code> may split it as:</p>
+<p>
+<code class="verbatim">[&#34;▁I&#34;, &#34;▁like&#34;, &#34;▁play&#34;, &#34;ing&#34;, &#34;▁foot&#34;, &#34;ball&#34;]</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
+Special Tokens
+</h2>
+<div id="outline-text-headline-10" class="outline-text-2">
+<p>Just words and subwords alone are not enough for all our tokenization needs. Sometimes, we may need to represent additional information during tokenization process. This is done by using special tokens. This can be done by using tokens like:</p>
+<ol>
+<li>
+<p>[CLS]</p>
+<ul>
+<li>Classification Token</li>
+<li>Usually  added at the beginning of the sequence:</li>
+<li><code class="verbatim">[CLS] The Odyssey was excellent [SEP]</code></li>
+<li>In model like BERT, for sequence level tasks: (Classify the entire sentence), we want a single vector that summarizes the entire sequence in one vector.</li>
+<li>The classifier head in the model uses that vector to predict a label (i.e. &#34;positive&#34; or &#34;negative&#34;)</li>
+</ul>
+</li>
+<li>
+<p>[SEP]</p>
+<ul>
+<li>Seperator token</li>
+<li>As the name suggests, it seperates sequences or sections.</li>
+<li><code class="verbatim">[CLS] What is the capital of France? [SEP] Paris is the capital of France. [SEP]</code></li>
+<li>This helps a model understand when two different parts like <code class="verbatim">question-answer</code>, <code class="verbatim">Sentence A-Sentence B</code> or two different documents seperate.</li>
+</ul>
+</li>
+<li>
+<p>[PAD]</p>
+<ul>
+<li>Padding Token</li>
+<li>Models typically operate in batches.</li>
+<li>Since all sequences may not have equal length, shorter sequences are padded to make the length equal.</li>
+<li><code class="verbatim">INPUT 1: [CLS] Hello World [SEP]</code></li>
+<li><code class="verbatim">INPUT 2: [CLS] Hi [SEP] [PAD]</code></li>
+</ul>
+</li>
+<li>
+<p>[UNK]</p>
+<ul>
+<li>Unknown Token</li>
+<li>This is used when models are unable to identify the token as a word or combination of subwords in the vocabulary.</li>
+<li><code class="verbatim">&#34;dsjkfh&#34; -&gt; [UNK]</code></li>
+<li>Although, using character level or subword level tokenizer which breaks down unseen word to character level reduces this token as all the characters &#34;d&#34;, &#34;s&#34;, … &#34;h&#34; are known individually.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-2">
+<h2 id="headline-11">
+Vocab Size
+</h2>
+<div id="outline-text-headline-11" class="outline-text-2">
+<ul>
+<li>The vocabulary size of the model is set and controlled using a Hyperparameter.</li>
+<li>Hyperparameter means that the parameter is not learned but have to set manually by a person.</li>
+<li>Too small → Loss of Detail</li>
+<li>Too big → Memory Hungry</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
+After Tokenization
+</h2>
+<div id="outline-text-headline-12" class="outline-text-2">
+<ul>
+<li>After the tokenization process completes, we get Integer IDs from strings:</li>
+<li>[&#34;the&#34;] → [ID: 234]</li>
+<li>This alone doesn&#39;t give us any information about which words are closer to what. (i.e cat and dogs are similar as they are both household pets)</li>
+<li>This task is done by Embedding layer, which during pre-training adjusts the <code class="verbatim">embedding vectors</code> such that tokens of &#34;cats&#34; and &#34;dogs&#34; are closer in a very high dimensional space.</li>
+<li>Words like &#34;the&#34;, &#34;a&#34; are extremely common and doesn&#39;t mean much in a sequence. So, they tend to act as glue and cluster near the origin (usually).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+Tokenizers used by Popular Models
+</h2>
+<div id="outline-text-headline-13" class="outline-text-2">
+<table>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Tokenization Algorithm</td>
+</tr>
+<tr>
+<td>BERT</td>
+<td>WordPiece</td>
+</tr>
+<tr>
+<td>GPT-2</td>
+<td>BPE</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>SentencePiece</td>
+</tr>
+<tr>
+<td>Llama 1/2</td>
+<td>SentencePiece</td>
+</tr>
+<tr>
+<td>Llama 3</td>
+<td>BPE</td>
+</tr>
+<tr>
+<td>Gemma Family</td>
+<td>SentencePiece</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
