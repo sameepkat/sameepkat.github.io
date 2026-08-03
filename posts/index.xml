@@ -13,7 +13,7 @@
       <link>https://sameepkathayat.com.np/tokenization/</link>
       <pubDate>Thu, 23 Jul 2026 08:11:18 +0545</pubDate>
       <guid>https://sameepkathayat.com.np/tokenization/</guid>
-      <description>&lt;p&gt;&#xA;We know, computers work with numbers and numbers only. So, whenever we represent some other formats like Emojis or Strings, it is naturally represented using numbers inside the computer system.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;The same goes for LLMs. They can&amp;#39;t just work on raw text. They are first converted to numbers before they can be processed. The tool that does this exactly is known as a tokenizer. It is quite similar in concept but different than tokenizer used by compilers.&lt;/p&gt;</description>
+      <description>&lt;img src=&#34;https://sameepkathayat.com.np/images/tokenizer.png&#34; /&gt;&#xA;&lt;p&gt;&#xA;We know, computers work with numbers and numbers only. So, whenever we represent some other formats like Emojis or Strings, it is naturally represented using numbers inside the computer system.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;The same goes for LLMs. They can&amp;#39;t just work on raw text. They are first converted to numbers before they can be processed. The tool that does this exactly is known as a tokenizer. It is quite similar in concept but different than tokenizer used by compilers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Quick Overview on Memory Allocators</title>
