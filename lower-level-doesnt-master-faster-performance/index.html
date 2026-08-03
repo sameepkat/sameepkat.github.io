@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Portfolio of Sameep">
+  
+  <title>Lower level doesn&#39;t master faster performance | Sameep</title>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">Home</a>
+    
+    <a href="/about/">about</a>
+    
+    <a href="/posts">posts</a>
+    
+    <a href="/projects/">projects</a>
+    
+  </nav>
+
+</header>
+
+
+    <div class="window">
+      <div class="titlebar">
+	Lower level doesn&#39;t master faster performance
+      </div>
+      <main class="content">
+	
+<article>
+  <h1>Lower level doesn&#39;t master faster performance</h1>
+  
+    <p><small>2026-08-03</small></p>
+  
+
+
+  <p>
+We all assume that the lower the level, the faster the performance gets.</p>
+<p>
+<code class="verbatim">Machine Code &gt; Assembly &gt; Compiled Languages &gt; Interpreted Languages</code></p>
+<p>
+This however, is a common misconception. Lower level does not inherently mean faster.</p>
+<p>
+An optimized higher level is going to be better than lower level unoptimized code.</p>
+<p>
+<code class="verbatim">Optimized Higher Level &gt; Unoptimized Lower Level</code></p>
+<p>
+A algorithm with run time of <code class="verbatim">O(n^3)</code> in assembly is going to be slower than an algorithm with run time of <code class="verbatim">O(n)</code> in some higher level languages.</p>
+<p>
+Also, many compiled languages that we use today like C++, Rust, etc. uses <a href="https:https://llvm.org/">LLVM</a> under the hood. It is a shared infrastructure whose one of the purpose is also to heavily optimize the code.</p>
+<p>
+Code optimization mean things like: Loop Rolling, Dead Code Elimination, Choosing Alternative implementation, Utilizing Faster Memory like Registers, Cache, etc., Vectorization, Inlining, Instruction Selection and so on.</p>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer>
+  <hr/>
+  <small>
+    Copyright © 2026 Sameep Kathayat
+  </small>
+</footer>
+
+  </body>
+</html>

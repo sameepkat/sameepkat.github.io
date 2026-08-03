@@ -2,45 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sameep</title>
-    <link>https://sameepkathayat.com.np/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Sameep</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 23 Jul 2026 08:11:18 +0545</lastBuildDate>
-    <atom:link href="https://sameepkathayat.com.np/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Aug 2026 08:05:33 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When Higher Level is Faster than Lower Level Language</title>
+      <link>http://localhost:1313/when-higher-level-is-faster-than-lower-level-language/</link>
+      <pubDate>Mon, 03 Aug 2026 08:05:33 +0545</pubDate>
+      <guid>http://localhost:1313/when-higher-level-is-faster-than-lower-level-language/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/images/low_bad.png&#34; /&gt;&#xA;&lt;p&gt;&#xA;We all assume that the lower the level, the faster the performance gets.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;code class=&#34;verbatim&#34;&gt;Machine Code &amp;gt; Assembly &amp;gt; Compiled Languages &amp;gt; Interpreted Languages&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;This however, is a common misconception. Lower level does not inherently mean faster.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;An optimized higher level is going to be better than lower level unoptimized code.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;code class=&#34;verbatim&#34;&gt;Optimized Higher Level &amp;gt; Unoptimized Lower Level&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;A algorithm with run time of &lt;code class=&#34;verbatim&#34;&gt;O(n^3)&lt;/code&gt; in assembly is going to be slower than an algorithm with run time of &lt;code class=&#34;verbatim&#34;&gt;O(n)&lt;/code&gt; in some higher level languages.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Tokenization</title>
-      <link>https://sameepkathayat.com.np/tokenization/</link>
+      <link>http://localhost:1313/tokenization/</link>
       <pubDate>Thu, 23 Jul 2026 08:11:18 +0545</pubDate>
-      <guid>https://sameepkathayat.com.np/tokenization/</guid>
-      <description>&lt;img src=&#34;https://sameepkathayat.com.np/images/tokenizer.png&#34; /&gt;&#xA;&lt;p&gt;&#xA;We know, computers work with numbers and numbers only. So, whenever we represent some other formats like Emojis or Strings, it is naturally represented using numbers inside the computer system.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;The same goes for LLMs. They can&amp;#39;t just work on raw text. They are first converted to numbers before they can be processed. The tool that does this exactly is known as a tokenizer. It is quite similar in concept but different than tokenizer used by compilers.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/tokenization/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/images/tokenizer.png&#34; /&gt;&#xA;&lt;p&gt;&#xA;We know, computers work with numbers and numbers only. So, whenever we represent some other formats like Emojis or Strings, it is naturally represented using numbers inside the computer system.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;The same goes for LLMs. They can&amp;#39;t just work on raw text. They are first converted to numbers before they can be processed. The tool that does this exactly is known as a tokenizer. It is quite similar in concept but different than tokenizer used by compilers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Quick Overview on Memory Allocators</title>
-      <link>https://sameepkathayat.com.np/a-quick-overview-on-memory-allocators/</link>
+      <link>http://localhost:1313/a-quick-overview-on-memory-allocators/</link>
       <pubDate>Tue, 21 Jul 2026 07:28:26 +0545</pubDate>
-      <guid>https://sameepkathayat.com.np/a-quick-overview-on-memory-allocators/</guid>
-      <description>&lt;img src=&#34;https://sameepkathayat.com.np/images/memory.webp&#34; /&gt;&#xA;&lt;p&gt;&#xA;This article mainly focuses on three popular general purpose allocators: glibc&amp;#39;s &lt;code class=&#34;verbatim&#34;&gt;ptmalloc2&lt;/code&gt;, &lt;code class=&#34;verbatim&#34;&gt;jemalloc&lt;/code&gt;, and &lt;code class=&#34;verbatim&#34;&gt;tcmalloc&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;&#xA;&lt;h2 id=&#34;headline-1&#34;&gt;&#xA;Understanding Memory Management: Stack vs. Heap&#xA;&lt;/h2&gt;&#xA;&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;&#xA;&lt;p&gt;Memory management is a fundamental aspect of programming, influencing performance, security, and reliability. Broadly, there are two primary strategies: &lt;strong&gt;stack-based&lt;/strong&gt; and &lt;strong&gt;heap-based&lt;/strong&gt; memory allocation. Each has distinct characteristics, trade-offs, and use cases.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+      <guid>http://localhost:1313/a-quick-overview-on-memory-allocators/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/images/memory.webp&#34; /&gt;&#xA;&lt;p&gt;&#xA;This article mainly focuses on three popular general purpose allocators: glibc&amp;#39;s &lt;code class=&#34;verbatim&#34;&gt;ptmalloc2&lt;/code&gt;, &lt;code class=&#34;verbatim&#34;&gt;jemalloc&lt;/code&gt;, and &lt;code class=&#34;verbatim&#34;&gt;tcmalloc&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;&#xA;&lt;h2 id=&#34;headline-1&#34;&gt;&#xA;Understanding Memory Management: Stack vs. Heap&#xA;&lt;/h2&gt;&#xA;&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;&#xA;&lt;p&gt;Memory management is a fundamental aspect of programming, influencing performance, security, and reliability. Broadly, there are two primary strategies: &lt;strong&gt;stack-based&lt;/strong&gt; and &lt;strong&gt;heap-based&lt;/strong&gt; memory allocation. Each has distinct characteristics, trade-offs, and use cases.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>First Post</title>
-      <link>https://sameepkathayat.com.np/first-post/</link>
+      <link>http://localhost:1313/first-post/</link>
       <pubDate>Sun, 21 Jun 2026 22:19:01 +0545</pubDate>
-      <guid>https://sameepkathayat.com.np/first-post/</guid>
+      <guid>http://localhost:1313/first-post/</guid>
       <description>&lt;p&gt;&#xA;Trying out stuff. More to come&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lum</title>
-      <link>https://sameepkathayat.com.np/projects/lum/</link>
+      <link>http://localhost:1313/projects/lum/</link>
       <pubDate>Tue, 16 Jun 2026 08:01:14 +0545</pubDate>
-      <guid>https://sameepkathayat.com.np/projects/lum/</guid>
-      <description>&lt;p&gt;&#xA;The Lum Programming Language &lt;/p&gt;&#xA;&lt;img src=&#34;https://sameepkathayat.com.np/images/lum.png&#34; width=200 /&gt;&#xA;&lt;!--The github repo is available at: https://github.com/sameepkat/lum You can star the project if you like it or contribute by opening issues or pull requests.&gt;&#xA;&lt;p&gt;&#xA;Lum is a dynamically typed programming language made in C++.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;It doesn&amp;#39;t try to be different than other programming languages just for the sake of being unique. It is designed to be easy to learn and use.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/lum/</guid>
+      <description>&lt;p&gt;&#xA;The Lum Programming Language &lt;/p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/lum.png&#34; width=200 /&gt;&#xA;&lt;!--The github repo is available at: https://github.com/sameepkat/lum You can star the project if you like it or contribute by opening issues or pull requests.&gt;&#xA;&lt;p&gt;&#xA;Lum is a dynamically typed programming language made in C++.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;It doesn&amp;#39;t try to be different than other programming languages just for the sake of being unique. It is designed to be easy to learn and use.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://sameepkathayat.com.np/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Tue, 16 Jun 2026 07:58:58 +0545</pubDate>
-      <guid>https://sameepkathayat.com.np/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;&#xA;Hello, I&amp;#39;m Sameep Kathayat.&#xA;A Software Engineering Undergrad student&lt;/p&gt;&#xA;&lt;p&gt;&#xA;I&amp;#39;m into low-level stuff. Also LLMs and inference..&lt;/p&gt;</description>
     </item>
   </channel>
