@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -39,14 +39,337 @@
   
 
 
-  <p>
+  
+<p>
 The Lum Programming Language </p>
 <img src="/images/lum.png" width=200 />
-<!--The github repo is available at: https://github.com/sameepkat/lum You can star the project if you like it or contribute by opening issues or pull requests.>
+<p>
+Repo Link: <a href="https://github.com/sameepkat/lum">https://github.com/sameepkat/lum</a></p>
 <p>
 Lum is a dynamically typed programming language made in C++.</p>
-<p>
-It doesn&#39;t try to be different than other programming languages just for the sake of being unique. It is designed to be easy to learn and use.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Syntax Showcase
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">use io
+</span></span><span class="line"><span class="cl">use array
+</span></span><span class="line"><span class="cl">use math
+</span></span><span class="line"><span class="cl">use time
+</span></span><span class="line"><span class="cl">use terminal
+</span></span><span class="line"><span class="cl">use string
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn banner(title) {
+</span></span><span class="line"><span class="cl">    println(&#34;==============================&#34;)
+</span></span><span class="line"><span class="cl">    println(title)
+</span></span><span class="line"><span class="cl">    println(&#34;==============================&#34;)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn factorial(n) {
+</span></span><span class="line"><span class="cl">    if n &lt;= 1 {
+</span></span><span class="line"><span class="cl">        return 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return n * factorial(n - 1)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn fib(n) {
+</span></span><span class="line"><span class="cl">    if n &lt;= 1 {
+</span></span><span class="line"><span class="cl">        return n
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return fib(n - 1) + fib(n - 2)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn is_prime(n) {
+</span></span><span class="line"><span class="cl">    if n &lt; 2 {
+</span></span><span class="line"><span class="cl">        return false
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    d = 2
+</span></span><span class="line"><span class="cl">    while d * d &lt;= n {
+</span></span><span class="line"><span class="cl">        if n % d == 0 {
+</span></span><span class="line"><span class="cl">            return false
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        d = d + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    return true
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn print_array(items) {
+</span></span><span class="line"><span class="cl">    print(&#34;[&#34;)
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; len(items) {
+</span></span><span class="line"><span class="cl">        print(items[i])
+</span></span><span class="line"><span class="cl">        if i &lt; len(items) - 1 {
+</span></span><span class="line"><span class="cl">            print(&#34;, &#34;)
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    println(&#34;]&#34;)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn sum_array(items) {
+</span></span><span class="line"><span class="cl">    total = 0
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; len(items) {
+</span></span><span class="line"><span class="cl">        total = total + items[i]
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return total
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn max_array(items) {
+</span></span><span class="line"><span class="cl">    best = items[0]
+</span></span><span class="line"><span class="cl">    i = 1
+</span></span><span class="line"><span class="cl">    while i &lt; len(items) {
+</span></span><span class="line"><span class="cl">        if items[i] &gt; best {
+</span></span><span class="line"><span class="cl">            best = items[i]
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return best
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn reverse_array(items) {
+</span></span><span class="line"><span class="cl">    result = []
+</span></span><span class="line"><span class="cl">    i = len(items) - 1
+</span></span><span class="line"><span class="cl">    while i &gt;= 0 {
+</span></span><span class="line"><span class="cl">        push(result, items[i])
+</span></span><span class="line"><span class="cl">        i = i - 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return result
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn filter_odd_numbers(items) {
+</span></span><span class="line"><span class="cl">    result = []
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; len(items) {
+</span></span><span class="line"><span class="cl">        value = items[i]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        if value % 2 == 0 {
+</span></span><span class="line"><span class="cl">            i = i + 1
+</span></span><span class="line"><span class="cl">            continue
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        push(result, value)
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return result
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn find_first_prime(items) {
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; len(items) {
+</span></span><span class="line"><span class="cl">        if is_prime(items[i]) {
+</span></span><span class="line"><span class="cl">            return items[i]
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return nil
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn count_until_limit(limit) {
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while true {
+</span></span><span class="line"><span class="cl">        if i &gt; limit {
+</span></span><span class="line"><span class="cl">            break
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        println(i)
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn draw_progress(label, steps) {
+</span></span><span class="line"><span class="cl">    print(label)
+</span></span><span class="line"><span class="cl">    print(&#34; &#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; steps {
+</span></span><span class="line"><span class="cl">        print(&#34;#&#34;)
+</span></span><span class="line"><span class="cl">        flush()
+</span></span><span class="line"><span class="cl">        sleep_ms(20)
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    println(&#34; done&#34;)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn make_student(name, age, scores) {
+</span></span><span class="line"><span class="cl">    return {
+</span></span><span class="line"><span class="cl">        name: name,
+</span></span><span class="line"><span class="cl">        age: age,
+</span></span><span class="line"><span class="cl">        scores: scores,
+</span></span><span class="line"><span class="cl">        active: true,
+</span></span><span class="line"><span class="cl">        note: nil
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn average_score(student) {
+</span></span><span class="line"><span class="cl">    scores = student.scores
+</span></span><span class="line"><span class="cl">    if len(scores) == 0 {
+</span></span><span class="line"><span class="cl">        return 0
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    return sum_array(scores) / len(scores)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn print_student(student) {
+</span></span><span class="line"><span class="cl">    println(&#34;Student record:&#34;)
+</span></span><span class="line"><span class="cl">    print(&#34;name: &#34;)
+</span></span><span class="line"><span class="cl">    println(student.name)
+</span></span><span class="line"><span class="cl">    print(&#34;age: &#34;)
+</span></span><span class="line"><span class="cl">    println(student.age)
+</span></span><span class="line"><span class="cl">    print(&#34;scores: &#34;)
+</span></span><span class="line"><span class="cl">    print_array(student.scores)
+</span></span><span class="line"><span class="cl">    print(&#34;average: &#34;)
+</span></span><span class="line"><span class="cl">    println(average_score(student))
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn math_demo() {
+</span></span><span class="line"><span class="cl">    banner(&#34;math demo&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    angle = 1.0
+</span></span><span class="line"><span class="cl">    print(&#34;sin(1): &#34;)
+</span></span><span class="line"><span class="cl">    println(sin(angle))
+</span></span><span class="line"><span class="cl">    print(&#34;cos(1): &#34;)
+</span></span><span class="line"><span class="cl">    println(cos(angle))
+</span></span><span class="line"><span class="cl">    print(&#34;tan(1): &#34;)
+</span></span><span class="line"><span class="cl">    println(tan(angle))
+</span></span><span class="line"><span class="cl">    print(&#34;floor(3.9): &#34;)
+</span></span><span class="line"><span class="cl">    println(floor(3.9))
+</span></span><span class="line"><span class="cl">    print(&#34;ceil(3.1): &#34;)
+</span></span><span class="line"><span class="cl">    println(ceil(3.1))
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn array_demo() {
+</span></span><span class="line"><span class="cl">    banner(&#34;array demo&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    numbers = [1, 2, 3, 4, 5, 13, 21]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;numbers: &#34;)
+</span></span><span class="line"><span class="cl">    print_array(numbers)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;sum: &#34;)
+</span></span><span class="line"><span class="cl">    println(sum_array(numbers))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;max: &#34;)
+</span></span><span class="line"><span class="cl">    println(max_array(numbers))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;reversed: &#34;)
+</span></span><span class="line"><span class="cl">    print_array(reverse_array(numbers))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;odds: &#34;)
+</span></span><span class="line"><span class="cl">    print_array(filter_odd_numbers(numbers))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print(&#34;first prime: &#34;)
+</span></span><span class="line"><span class="cl">    println(find_first_prime(numbers))
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn recursion_demo() {
+</span></span><span class="line"><span class="cl">    banner(&#34;recursion demo&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt;= 7 {
+</span></span><span class="line"><span class="cl">        print(&#34;factorial(&#34;)
+</span></span><span class="line"><span class="cl">        print(i)
+</span></span><span class="line"><span class="cl">        print(&#34;) = &#34;)
+</span></span><span class="line"><span class="cl">        println(factorial(i))
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    println(&#34;&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt;= 8 {
+</span></span><span class="line"><span class="cl">        print(&#34;fib(&#34;)
+</span></span><span class="line"><span class="cl">        print(i)
+</span></span><span class="line"><span class="cl">        print(&#34;) = &#34;)
+</span></span><span class="line"><span class="cl">        println(fib(i))
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn object_demo() {
+</span></span><span class="line"><span class="cl">    banner(&#34;object demo&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    sameep = make_student(&#34;Sameep&#34;, 21, [90, 87, 94, 99])
+</span></span><span class="line"><span class="cl">    sameep.note = &#34;likes compilers and tiny models&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    print_student(sameep)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if sameep.active and average_score(sameep) &gt; 90 {
+</span></span><span class="line"><span class="cl">        println(&#34;status: excellent&#34;)
+</span></span><span class="line"><span class="cl">    } else {
+</span></span><span class="line"><span class="cl">        println(&#34;status: keep practicing&#34;)
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn loop_demo() {
+</span></span><span class="line"><span class="cl">    banner(&#34;loop demo&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    println(&#34;count until 3 using break:&#34;)
+</span></span><span class="line"><span class="cl">    count_until_limit(3)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    println(&#34;skip even numbers using continue:&#34;)
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    while i &lt; 10 {
+</span></span><span class="line"><span class="cl">        if i % 2 == 0 {
+</span></span><span class="line"><span class="cl">            i = i + 1
+</span></span><span class="line"><span class="cl">            continue
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        println(i)
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn string_demo() {
+</span></span><span class="line"><span class="cl">   banner(&#34;string conversion demo&#34;)
+</span></span><span class="line"><span class="cl">   a = number(&#34;123&#34;)
+</span></span><span class="line"><span class="cl">   b = number(&#34;1.34&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;number(123) + 7 = &#34;)
+</span></span><span class="line"><span class="cl">   println(a + 7)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;number(1.34) + 1 = &#34;)
+</span></span><span class="line"><span class="cl">   println(b + 1)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;string(123) = &#34;)
+</span></span><span class="line"><span class="cl">   println(string(123))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;string(true) = &#34;)
+</span></span><span class="line"><span class="cl">   println(string(123))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;string(true) = &#34;)
+</span></span><span class="line"><span class="cl">   println(string(true))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   print(&#34;string(nil) = &#34;)
+</span></span><span class="line"><span class="cl">   println(string(nil))
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">fn main() {
+</span></span><span class="line"><span class="cl">    clear()
+</span></span><span class="line"><span class="cl">    hide_cursor()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    banner(&#34;Lum syntax showcase&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    recursion_demo()
+</span></span><span class="line"><span class="cl">    array_demo()
+</span></span><span class="line"><span class="cl">    object_demo()
+</span></span><span class="line"><span class="cl">    loop_demo()
+</span></span><span class="line"><span class="cl">    math_demo()
+</span></span><span class="line"><span class="cl">    string_demo()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    show_cursor()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    println(&#34;All done!&#34;)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">main()</span></span></code></pre></div>
+</div>
+</div>
+</div>
 
 </article>
 

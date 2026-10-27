@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Portfolio of Sameep">
+  
+  <title>Nae | Sameep</title>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">Home</a>
+    
+    <a href="/about/">about</a>
+    
+    <a href="/posts">posts</a>
+    
+    <a href="/projects/">projects</a>
+    
+  </nav>
+
+</header>
+
+
+    <div class="window">
+      <div class="titlebar">
+	Nae
+      </div>
+      <main class="content">
+	
+<article>
+  <h1>Nae</h1>
+  
+    <p><small>2026-10-27</small></p>
+  
+
+
+  
+<p>
+A simple, lightweight HTTP server built from scratch in C++.</p>
+<p>
+It is a basic HTTP/1.1 server implementation in C++. It&#39;s designed to be a learning tool for understanding the fundamentals of network programming and the HTTP protocol. The server can handle basic GET requests, serve static files, and has a simple routing mechanism.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Features
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<ul>
+<li>Handles GET requests</li>
+<li>Serves static files from the public directory</li>
+<li>Basic routing for /, /health, and a 404 page</li>
+<li>Non-blocking I/O using poll() for handling multiple connections</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Usage
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>Once the server is running, you can interact with it using a web browser or a tool like curl.</p>
+<ul>
+<li>Root: <a href="http://localhost:8080/">http://localhost:8080/</a> - Serves the index.html file.</li>
+<li>Health Check: <a href="http://localhost:8080/health">http://localhost:8080/health</a> - Returns a &#34;200 OK&#34; status.</li>
+<li>Static Files: <a href="http://localhost:8080/styles.css">http://localhost:8080/styles.css</a> - Serves the styles.css file.</li>
+<li>Not Found: <a href="http://localhost:8080/foo">http://localhost:8080/foo</a> - Returns a &#34;404 Not Found&#34; error.</li>
+</ul>
+</div>
+</div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer>
+  <hr/>
+  <small>
+    Copyright © 2026 Sameep Kathayat
+  </small>
+</footer>
+
+  </body>
+</html>

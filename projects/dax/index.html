@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Portfolio of Sameep">
+  
+  <title>Dax | Sameep</title>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">Home</a>
+    
+    <a href="/about/">about</a>
+    
+    <a href="/posts">posts</a>
+    
+    <a href="/projects/">projects</a>
+    
+  </nav>
+
+</header>
+
+
+    <div class="window">
+      <div class="titlebar">
+	Dax
+      </div>
+      <main class="content">
+	
+<article>
+  <h1>Dax</h1>
+  
+    <p><small>2026-10-27</small></p>
+  
+
+
+  
+<img src="/images/dax.png" />
+<p>
+Github: <a href="https://github.com/sameepkat/dax">https://github.com/sameepkat/dax</a></p>
+<p>
+AUR: <a href="https://aur.archlinux.org/packages/dax-shell">https://aur.archlinux.org/packages/dax-shell</a></p>
+<p>
+Misc: <a href="https://www.linuxlinks.com/dax-shell-cli/">https://www.linuxlinks.com/dax-shell-cli/</a></p>
+<p>
+Dax is a custom Unix shell implementation written in C++. It provides a familiar command-line interface with support for standard shell features, including command execution, piping, redirection, and built-in commands.Features</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Features
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<ul>
+<li>Custom Prompt: Displays the current directory in green, with ~ expansion for the home directory.</li>
+<li>Command Execution: Run standard Linux commands (e.g., ls, grep, vim).</li>
+<li>Piping: Connect commands using pipes (|).</li>
+<li>Redirection: Support for input (&lt;), output (&gt;), and append (&gt;&gt;) redirection.</li>
+<li>Command Lists: Execute multiple commands sequentially using semicolons (;).</li>
+<li>
+<p>Built-in Commands:</p>
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">  cd: Change directory.
+</span></span><span class="line"><span class="cl">  pwd: Print working directory.
+</span></span><span class="line"><span class="cl">  echo: Print arguments to standard output.
+</span></span><span class="line"><span class="cl">  export: Set environment variables.
+</span></span><span class="line"><span class="cl">  alias / unalias: Create and remove command aliases.
+</span></span><span class="line"><span class="cl">  history: View command history.
+</span></span><span class="line"><span class="cl">  exit: Exit the shell.</span></span></code></pre></div>
+</div>
+</li>
+<li>History Management: Persistent command history saved to ~/.dax_history. Supports arrow key navigation (via readline).</li>
+<li>Signal Handling: Gracefully handles SIGINT (Ctrl+C).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Examples
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Navigation and File Operations:
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Dax &gt; ls -la
+</span></span><span class="line"><span class="cl">Dax &gt; cd ..
+</span></span><span class="line"><span class="cl">Dax &gt; pwd</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Piping and Redirection:
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Dax &gt; ls | grep cpp &gt; sources.txt
+</span></span><span class="line"><span class="cl">Dax &gt; cat sources.txt</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+History:
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Dax &gt; history
+</span></span><span class="line"><span class="cl">Dax &gt; history 10  # Show last 10 commands</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Environment Variables:
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Dax &gt; export MY_VAR=hello
+</span></span><span class="line"><span class="cl">Dax &gt; echo $MY_VAR</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+How Dax Works
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<p>If you&#39;ve ever typed a command into a terminal, you&#39;ve used a shell. But have you ever wondered what&#39;s happening under the hood? How does the shell understand your commands, run programs, and manage input and output? In this blog post, we&#39;ll take a deep dive into the inner workings of a custom Unix shell called Dax. We&#39;ll explore its source code to understand how it implements core shell features like command execution, piping, and redirection.</p>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+The Heart of the Shell: The Main Loop
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>
+At its core, a shell is a simple program that runs in a loop. In each iteration, it does the following:</p>
+<ol>
+<li><strong><strong>Prints a prompt</strong></strong>: This is to let the user know that the shell is ready to accept a command.</li>
+<li><strong><strong>Reads a line of input</strong></strong>: The shell waits for the user to type a command and press Enter.</li>
+<li><strong><strong>Processes the command</strong></strong>: The shell parses the input, figures out what the user wants to do, and then does it.</li>
+</ol>
+<p>The main loop of the Dax shell is in the `main.cpp` file. It uses the `readline` library to provide a rich user experience with features like command history and arrow key navigation.</p>
+<div class="src src-cpp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// main.cpp
+</span></span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1. Print a prompt
+</span></span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">input</span> <span class="o">=</span> <span class="n">readline</span><span class="p">(</span><span class="n">prompt_str</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2. Read a line of input
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">line</span> <span class="o">=</span> <span class="n">input</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">free</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3. Process the command
+</span></span></span><span class="line"><span class="cl">    <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">tokens</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">auto</span> <span class="n">ast</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">tokens</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ast</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ast</span><span class="o">-&gt;</span><span class="n">execute</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Parse/Exec Error: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
+Breaking It Down: Tokenization
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
+<p>
+Before the shell can understand a command, it needs to break it down into smaller, more manageable pieces. This process is called <strong><strong>tokenization</strong></strong>. The tokenizer in Dax scans the input string and splits it into a sequence of tokens. For example, the command <code class="verbatim">ls -l | grep cpp</code> would be tokenized into <code class="verbatim">ls</code>, <code class="verbatim">-l</code>, <code class="verbatim">|</code>, <code class="verbatim">grep</code>, and <code class="verbatim">cpp</code>.</p>
+<p>
+The tokenizer in <code class="verbatim">tokenizer.cpp</code> is implemented as a state machine. It can handle single quotes, double quotes, and special characters like <code class="verbatim">|</code>, <code class="verbatim">;</code>, <code class="verbatim">&lt;</code>, <code class="verbatim">&gt;</code>, and <code class="verbatim">&gt;&gt;</code>.</p>
+<p>
+## Making Sense of It All: Parsing and the AST</p>
+<p>
+Once the input has been tokenized, the shell needs to make sense of the tokens. This is where the <strong><strong>parser</strong></strong> comes in. The parser takes the sequence of tokens and builds a data structure called an <strong><strong>Abstract Syntax Tree (AST)</strong></strong>. The AST is a tree representation of the command that captures its structure and meaning.</p>
+<p>
+For example, the command <code class="verbatim">ls -l | grep cpp</code> would be parsed into an AST that looks something like this:</p>
+<div class="src src-markdown">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">    Pipe
+</span></span><span class="line"><span class="cl">   /    \
+</span></span><span class="line"><span class="cl">Command  Command
+</span></span><span class="line"><span class="cl">  |        |
+</span></span><span class="line"><span class="cl">ls -l    grep cpp</span></span></code></pre></div>
+</div>
+<p>
+The Dax parser, implemented in <code class="verbatim">parser.cpp</code>, is a recursive descent parser. It has functions for parsing simple commands, pipes, and lists of commands. The <code class="verbatim">parse</code> function returns a <code class="verbatim">std::unique_ptr&lt;ASTNode&gt;</code>, which is the root of the AST.</p>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Getting Things Done: Command Execution
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>
+After the AST has been built, the shell can execute the command by traversing the tree. The <code class="verbatim">execute</code> method is called on the root of the AST, which then recursively calls the <code class="verbatim">execute</code> method on its children.</p>
+<div id="outline-container-headline-11" class="outline-4">
+<h4 id="headline-11">
+Simple Commands
+</h4>
+<div id="outline-text-headline-11" class="outline-text-4">
+<p>
+For a simple command like <code class="verbatim">ls -l</code>, the <code class="verbatim">CommandNode::execute</code> method is called. This method does the following:</p>
+<ol>
+<li><strong><strong>Handles Redirections</strong></strong>: It sets up any input or output redirections.</li>
+<li><strong><strong>Checks for Built-ins</strong></strong>: It checks if the command is a built-in command (like <code class="verbatim">cd</code> or <code class="verbatim">exit</code>). If it is, it executes the built-in function directly.</li>
+<li><strong><strong>Forks and Execs</strong></strong>: If the command is not a built-in, it uses the <code class="verbatim">fork</code> and <code class="verbatim">execvp</code> system calls to run the command in a new process.</li>
+</ol>
+<div class="src src-cpp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// CommandNode::execute in parser.cpp
+</span></span></span><span class="line"><span class="cl"><span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Child process
+</span></span></span><span class="line"><span class="cl">    <span class="n">execvp</span><span class="p">(</span><span class="n">c_args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c_args</span><span class="p">.</span><span class="n">data</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">perror</span><span class="p">(</span><span class="s">&#34;execvp&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Parent process
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-4">
+<h4 id="headline-12">
+Pipes
+</h4>
+<div id="outline-text-headline-12" class="outline-text-4">
+<p>
+For a command with a pipe, like <code class="verbatim">ls -l | grep cpp</code>, the <code class="verbatim">PipeNode::execute</code> method is called. This method does the following:</p>
+<ol>
+<li><strong><strong>Creates a pipe</strong></strong>: It uses the <code class="verbatim">pipe</code> system call to create a pipe, which is a pair of file descriptors.</li>
+<li><strong><strong>Forks two child processes</strong></strong>: It forks two child processes, one for the command on the left side of the pipe and one for the command on the right.</li>
+<li><strong><strong>Sets up the pipe</strong></strong>: The left child&#39;s standard output is redirected to the write end of the pipe, and the right child&#39;s standard input is redirected to the read end of the pipe.</li>
+<li><strong><strong>Waits for the children to complete</strong></strong>: The parent process waits for both child processes to finish.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Bells and Whistles: History and Other Features
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
+<p>
+In addition to the core features we&#39;ve discussed, the Dax shell also implements a number of other features, including:</p>
+<div id="outline-container-headline-14" class="outline-4">
+<h4 id="headline-14">
+<strong>Command History</strong>: The shell keeps a history of the commands that have been entered. The user can navigate through the history using the arrow keys.
+</h4>
+</div>
+<div id="outline-container-headline-15" class="outline-4">
+<h4 id="headline-15">
+<strong>Built-in Commands</strong>: The shell provides a number of built-in commands, such as <code class="verbatim">cd</code>, <code class="verbatim">exit</code>, and <code class="verbatim">pwd</code>.
+</h4>
+</div>
+<div id="outline-container-headline-16" class="outline-4">
+<h4 id="headline-16">
+<strong>Signal Handling</strong> : The shell handles signals like <code class="verbatim">SIGINT</code> (Ctrl+C) gracefully.
+</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer>
+  <hr/>
+  <small>
+    Copyright © 2026 Sameep Kathayat
+  </small>
+</footer>
+
+  </body>
+</html>

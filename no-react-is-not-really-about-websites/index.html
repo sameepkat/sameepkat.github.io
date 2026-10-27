@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Portfolio of Sameep">
+  
+  <title>No React Is Not Really About Websites | Sameep</title>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <a href="/">Home</a>
+    
+    <a href="/about/">about</a>
+    
+    <a href="/posts">posts</a>
+    
+    <a href="/projects/">projects</a>
+    
+  </nav>
+
+</header>
+
+
+    <div class="window">
+      <div class="titlebar">
+	No React Is Not Really About Websites
+      </div>
+      <main class="content">
+	
+<article>
+  <h1>No React Is Not Really About Websites</h1>
+  
+    <p><small>2026-10-27</small></p>
+  
+
+
+  
+<p>
+Most people hear “React” and just think of Websites and User Interfaces. And while, React is used for those purposes, at it’s core, react is just a diffing engine. All it does it look at the first component tree and the second one, then determines what exactly needs to change between them. This is called Reconciliation. This allows only the changed components to be re-rendered instead of the whole component tree.</p>
+<img src="/images/react_tree.gif" />
+<p>
+So, fundamentally React is not just a website library. It is a: </p>
+<p>
+&gt; <em>Declarative tree reconciliation and synchronization engine, originally designed for user interfaces.</em></p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+React’s Architecture
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<img src="/images/reacts_architecture.png" />
+<p>
+React, by itself does not know what <code class="verbatim">&lt;div&gt;</code> really means. These are browser-specific things that are handled by a separate package (react-dom) that you might see being downloaded as a dependency when you try to create a react web app.</p>
+<p>
+Similarly, React Native uses React’s engine to create mobile specific components. Here, React Native acts a bridge for OS-specific components and React is the reconciliation engine for changed components.</p>
+<p>
+You might have heard that Windows uses React for their Start Menu. It is the same principle here as well. They use React Native Windows for rewriting native windows code with React.
+Renderer</p>
+<p>
+Renderer is the exact term for the entity responsible for creating UI for a specific platform. It translates the reconciliation decisions into operations for a particular target.</p>
+<p>
+You may have already heard of many react renderers out there.</p>
+<pre class="example">
+1. React DOM
+   Browser DOM Node
+
+2. React Native
+   Native Android/ iOS view
+
+3. React Three Fiber
+   Three.js Object
+</pre>
+<p>
+and so on.</p>
+<p>
+The React Documentation describes the renderer as calling components to determine what should be displayed on the screen. It is followed by committing the necessary changes to the DOM or Native Views or something else.</p>
+</div>
+</div>
+
+</article>
+
+      </main>
+    </div>
+
+    <footer>
+  <hr/>
+  <small>
+    Copyright © 2026 Sameep Kathayat
+  </small>
+</footer>
+
+  </body>
+</html>
